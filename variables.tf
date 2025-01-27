@@ -69,7 +69,7 @@ variable "recreate_pods" {
 variable "prometheus_enabled" {
   description = "Specifies whether Prometheus should be enabled in the Kubernetes cluster."
   type        = bool
-  default     = false
+  default     = true
 }
 
 variable "prometheus_resource_name" {
@@ -90,7 +90,7 @@ variable "prometheus_version" {
 variable "istio_enabled" {
   description = "Specifies whether Istio should be enabled in the Kubernetes cluster."
   type        = bool
-  default     = false
+  default     = true
 }
 
 variable "istio_version" {
@@ -215,7 +215,7 @@ variable "arc_rss_secondary_runner_group" {
 variable "argocd_enabled" {
   description = "Specifies whether Argo should be enabled in the Kubernetes cluster."
   type        = bool
-  default     = false
+  default     = true
 }
 
 variable "argocd_version" {
@@ -249,3 +249,41 @@ variable "argocd_apps_resource_name" {
   type        = string
   default     = "argocd-app"
 }
+
+# Nexus variables
+
+variable "nexus_enabled" {
+  description = "Specifies whether Nexus should be enabled in the Kubernetes cluster."
+  type        = bool
+  default     = true
+}
+
+variable "nexus_version" {
+  description = "The version of Nexus to be installed or managed."
+  type        = string
+  default     = "42.0.1"
+}
+
+variable "nexus_resource_name" {
+  description = "The name of the Nexus resource within the Kubernetes cluster."
+  type        = string
+  default     = "nexus"
+}
+
+# variable "nexus_cluster_enabled" {
+#   description = "Enabled cluster mode in Nexus HA"
+#   type        = bool
+#   default     = false
+# }
+
+# variable "nexus_cluster_replicas" {
+#   description = "Number of replicas for the cluster mode in Nexus HA"
+#   type        = number
+#   default     = 1
+# }
+
+# variable "nexus_namespace_create_enabled" {
+#   description = "Enable namespace creation in Nexus"
+#   type        = bool
+#   default     = false
+# }
